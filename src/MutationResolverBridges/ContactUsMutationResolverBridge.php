@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace PoPSitesWassup\ContactUsMutations\MutationResolverBridges;
 
-use Symfony\Contracts\Service\Attribute\Required;
 use PoP\ComponentModel\MutationResolvers\MutationResolverInterface;
 use PoPSitesWassup\ContactUsMutations\MutationResolvers\ContactUsMutationResolver;
 use PoPSitesWassup\FormMutations\MutationResolverBridges\AbstractFormComponentMutationResolverBridge;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class ContactUsMutationResolverBridge extends AbstractFormComponentMutationResolverBridge
 {
     protected ContactUsMutationResolver $contactUsMutationResolver;
 
     #[Required]
-    public function autowireContactUsMutationResolverBridge(
+    final public function autowireContactUsMutationResolverBridge(
         ContactUsMutationResolver $contactUsMutationResolver,
     ): void {
         $this->contactUsMutationResolver = $contactUsMutationResolver;
